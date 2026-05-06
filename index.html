@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>井之上歯科 | 鹿児島市西伊敷の歯医者</title>
+<meta name="description" content="鹿児島市西伊敷の歯科医院「井之上歯科」。一般歯科・予防歯科・小児歯科・義歯。保険診療対応。駐車場完備。電話予約受付中：099-228-5755">
+<meta property="og:title" content="井之上歯科 | 鹿児島市西伊敷の歯医者">
+<meta property="og:description" content="地元に根ざした温かみのある歯科医院。一本の歯を、家族のように。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='50%' fill='%235B8FB9'/><text x='50%' y='50%' font-family='serif' font-size='18' fill='white' text-anchor='middle' dominant-baseline='central'>井</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primary: #6FA888;
+    --primary-dark: #4F8068;
+    --primary-light: #C4DBCB;
+    --primary-50: #EEF5F0;
+    --accent: #E0B888;
+    --bg: #FAF7F2;
+    --bg-soft: #F4EFE6;
+    --ink: #2A3441;
+    --ink-soft: #5A6573;
+    --ink-mute: #8A95A3;
+    --line: rgba(42,52,65,0.08);
+    --line-strong: rgba(42,52,65,0.16);
+    --radius: 4px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ==== Header ==== */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250, 247, 242, 0);
+    transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+  }
+  .site-header.scrolled {
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--line);
+    padding: 10px 40px;
+  }
+  .logo {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .nav { display: flex; gap: 26px; align-items: center; }
+  .nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: var(--primary); }
+  .nav-tel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-dark) !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+  @media (max-width: 768px) {
+    .site-header { padding: 12px 16px; }
+    .nav { gap: 12px; }
+    .nav a:not(.nav-tel) { display: none; }
+  }
+
+  /* ==== Hero ==== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--bg) 60%, var(--bg-soft) 100%);
+  }
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    will-change: transform;
+  }
+  .hero-blob-1 {
+    width: 600px; height: 600px;
+    background: var(--primary-light);
+    top: -200px; right: -100px;
+  }
+  .hero-blob-2 {
+    width: 500px; height: 500px;
+    background: var(--accent);
+    bottom: -150px; left: -100px;
+    opacity: 0.3;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 100px 20px 60px; }
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--primary-dark);
+    background: rgba(111, 168, 136, 0.1);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  .hero-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(40px, 6.5vw, 76px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero-name .em { color: var(--primary); }
+  .hero-tagline {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    letter-spacing: 0.04em;
+  }
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .hero-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .hero-info-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .hero-info-icon svg { width: 16px; height: 16px; }
+  .hero-info-label {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+  .hero-tel-big {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 16px rgba(111, 168, 136, 0.3);
+  }
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(111, 168, 136, 0.4);
+  }
+  .btn-ghost {
+    background: white;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+  }
+  .btn-ghost:hover {
+    background: var(--primary-50);
+    border-color: var(--primary);
+    color: var(--primary-dark);
+  }
+
+  /* Hero image */
+  .hero-visual { position: relative; }
+  .hero-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 280px 280px 24px 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-50));
+    will-change: transform;
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 12px,
+        rgba(255,255,255,0.25) 12px,
+        rgba(255,255,255,0.25) 13px
+      );
+  }
+  .hero-image-label {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: rgba(255,255,255,0.85);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+  .hero-image-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .floating-card {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 32px rgba(42, 52, 65, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    will-change: transform;
+    z-index: 3;
+  }
+  .floating-card-1 { top: 40px; right: -20px; }
+  .floating-card-2 { bottom: 60px; right: -20px; }
+  @media (max-width: 900px) {
+    .floating-card-1, .floating-card-2 { display: none; }
+  }
+  .floating-card-icon {
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    background: var(--primary-50);
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  .floating-card-icon svg { width: 20px; height: 20px; }
+  .floating-card-title {
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+  }
+  .floating-card-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ==== Section common ==== */
+  section { position: relative; }
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+  @media (max-width: 768px) {
+    .container { padding: 70px 20px; }
+  }
+  .section-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--primary);
+  }
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .section-lede {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    line-height: 1.9;
+  }
+  .section-head {
+    text-align: center;
+    margin: 0 auto 60px;
+    max-width: 720px;
+  }
+  .section-head .section-eyebrow { justify-content: center; }
+  .section-head .section-eyebrow::before { display: none; }
+  .section-head .section-lede { margin: 0 auto; }
+
+  /* ==== Hours table ==== */
+  .hours-section { background: var(--bg-soft); }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .hours-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .hours-table {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(42, 52, 65, 0.06);
+    border: 1px solid var(--line);
+  }
+  .hours-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .hours-table th, .hours-table td {
+    padding: 18px 8px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hours-table thead th {
+    background: var(--primary-50);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--line);
+  }
+  .hours-table thead th.sat { color: var(--primary); }
+  .hours-table thead th.sun { color: #C77D7D; }
+  .hours-table tbody th {
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    padding-left: 18px;
+  }
+  .hours-table td {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hours-table .closed {
+    color: var(--ink-mute);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+  }
+  .hours-table tr:last-child th,
+  .hours-table tr:last-child td { border-bottom: none; }
+
+  .hours-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .hours-note {
+    padding: 22px 24px;
+    background: white;
+    border-radius: 14px;
+    border-left: 3px solid var(--primary);
+  }
+  .hours-note-title {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hours-note p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  /* ==== Services ==== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 32px;
+    border: 1px solid var(--line);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(42, 52, 65, 0.1);
+    border-color: var(--primary-light);
+  }
+  .service-card-num {
+    position: absolute;
+    top: 24px; right: 28px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 56px;
+    color: var(--primary-50);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .service-card-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    background: var(--primary-50);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+  }
+  .service-card-icon svg { width: 28px; height: 28px; }
+  .service-card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 18px;
+  }
+  .service-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .service-tag {
+    font-size: 11px;
+    color: var(--primary-dark);
+    background: var(--primary-50);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .service-tag.self { color: #B26F58; background: #FAEEE8; }
+
+  /* ==== Doctor section ==== */
+  .doctor-section {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  }
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 70px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .doctor-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .doctor-portrait {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-50));
+    box-shadow: 0 20px 60px rgba(42, 52, 65, 0.12);
+  }
+  .doctor-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 14px,
+        rgba(255,255,255,0.3) 14px,
+        rgba(255,255,255,0.3) 15px
+      );
+  }
+  .doctor-portrait-label {
+    position: absolute;
+    bottom: 18px; left: 18px;
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: rgba(255,255,255,0.92);
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .doctor-stamp {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transform: rotate(-8deg);
+  }
+
+  .doctor-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .doctor-title-jp {
+    font-size: 13px;
+    color: var(--primary);
+    letter-spacing: 0.1em;
+    margin-bottom: 32px;
+  }
+  .doctor-message {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 17px;
+    line-height: 2.1;
+    color: var(--ink);
+    margin-bottom: 28px;
+    letter-spacing: 0.03em;
+  }
+  .doctor-message p + p { margin-top: 16px; }
+  .doctor-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .doctor-credentials li {
+    list-style: none;
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding-left: 18px;
+    position: relative;
+  }
+  .doctor-credentials li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 8px; height: 1px;
+    background: var(--primary);
+  }
+
+  /* ==== Reviews ==== */
+  .reviews-section { background: var(--bg-soft); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+  .review-card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px 28px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .review-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 14px; right: 22px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 80px;
+    color: var(--primary-50);
+    line-height: 1;
+  }
+  .review-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 14px;
+    color: #E8B547;
+  }
+  .review-stars svg { width: 16px; height: 16px; }
+  .review-text {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--ink);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .review-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: grid;
+    place-items: center;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .review-meta-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .review-meta-info {
+    font-size: 11px;
+    color: var(--ink-mute);
+  }
+
+  .reviews-source {
+    margin-top: 36px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* ==== Access ==== */
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+  }
+  @media (max-width: 900px) { .access-grid { grid-template-columns: 1fr; } }
+  .access-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .access-row {
+    display: flex;
+    gap: 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .access-row:first-child { padding-top: 0; }
+  .access-icon {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: var(--primary-50);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .access-icon svg { width: 18px; height: 18px; }
+  .access-label {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .access-value {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .access-value a {
+    color: var(--primary-dark);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .access-map {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(42, 52, 65, 0.1);
+    background: var(--bg-soft);
+    min-height: 460px;
+    border: 1px solid var(--line);
+  }
+  .access-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  /* ==== Booking CTA ==== */
+  .booking-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .booking-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .booking-section::after {
+    content: '';
+    position: absolute;
+    bottom: -300px; left: -200px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .booking-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+  }
+  .booking-section .section-eyebrow {
+    color: rgba(255,255,255,0.85);
+    justify-content: center;
+  }
+  .booking-section .section-eyebrow::before { display: none; }
+  .booking-section .section-title { color: white; }
+  .booking-section .section-lede {
+    color: rgba(255,255,255,0.85);
+    margin: 0 auto 40px;
+  }
+  .booking-tel {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 28px 56px;
+    border-radius: 24px;
+    color: var(--primary-dark);
+    text-decoration: none;
+    transition: transform 0.2s;
+    max-width: 100%;
+  }
+  .booking-tel:hover { transform: scale(1.02); }
+  .booking-tel-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .booking-tel-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .booking-tel-number svg { width: 30px; height: 30px; flex-shrink: 0; }
+  .booking-tel-hours {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .booking-tel { padding: 22px 24px; }
+    .booking-tel-number { font-size: 28px; }
+    .booking-tel-number svg { width: 22px; height: 22px; }
+  }
+
+  /* ==== Footer ==== */
+  .site-footer {
+    background: #1F2731;
+    color: rgba(255,255,255,0.7);
+    padding: 60px 40px 30px;
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
+  .footer-brand {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .footer-text { font-size: 13px; line-height: 1.9; }
+  .footer-h {
+    font-size: 12px;
+    color: white;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .footer-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-list a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; }
+  .footer-list a:hover { color: white; }
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 30px auto 0;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  /* ==== Reveal animations ==== */
+  .reveal { opacity: 1; transform: none; }
+  html.js-reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  html.js-reveal-ready .reveal.visible { opacity: 1; transform: translateY(0); }
+  html.js-reveal-ready .reveal.delay-1 { transition-delay: 0.08s; }
+  html.js-reveal-ready .reveal.delay-2 { transition-delay: 0.16s; }
+  html.js-reveal-ready .reveal.delay-3 { transition-delay: 0.24s; }
+  html.js-reveal-ready .reveal.delay-4 { transition-delay: 0.32s; }
+  @media (prefers-reduced-motion: reduce) {
+    html.js-reveal-ready .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: var(--primary);
+    z-index: 1000;
+    width: 0%;
+    transition: width 0.05s linear;
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="logo">
+    <span class="logo-mark">井</span>
+    <span>井之上歯科</span>
+  </a>
+  <nav class="nav">
+    <a href="#hours">診療時間</a>
+    <a href="#services">診療内容</a>
+    <a href="#doctor">院長紹介</a>
+    <a href="#reviews">患者様の声</a>
+    <a href="#access">アクセス</a>
+    <a href="tel:0992285755" class="nav-tel">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      099-228-5755
+    </a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-blob hero-blob-1" id="blob1"></div>
+  <div class="hero-blob hero-blob-2" id="blob2"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">鹿児島市西伊敷　地域の歯科医院</div>
+      <h1 class="hero-name reveal delay-1">
+        井之上歯科<span class="em">.</span>
+      </h1>
+      <p class="hero-tagline reveal delay-2">
+        — 一本の歯を、家族のように。
+      </p>
+
+      <div class="hero-info reveal delay-3">
+        <div class="hero-info-item">
+          <div class="hero-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="hero-info-label">ADDRESS</div>
+            <div>〒890-0002 鹿児島県鹿児島市西伊敷3丁目13-4</div>
+          </div>
+        </div>
+        <div class="hero-info-item">
+          <div class="hero-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="hero-info-label">TEL</div>
+            <div class="hero-tel-big">099-228-5755</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta reveal delay-4">
+        <a href="tel:0992285755" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          電話で予約する
+        </a>
+        <a href="#access" class="btn btn-ghost">
+          地図を見る
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image" id="heroImage">
+        <!-- TODO: 院内写真に差し替えてください。img タグで hero-image-svg クラスを使用 -->
+        <svg class="hero-image-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#C4DBCB" stop-opacity="0.6"/>
+              <stop offset="1" stop-color="#EEF5F0" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#g1)"/>
+          <rect x="60" y="80" width="120" height="180" rx="6" fill="white" opacity="0.45"/>
+          <line x1="120" y1="80" x2="120" y2="260" stroke="white" stroke-width="2" opacity="0.7"/>
+          <line x1="60" y1="170" x2="180" y2="170" stroke="white" stroke-width="2" opacity="0.7"/>
+          <rect x="220" y="220" width="140" height="40" rx="20" fill="#6FA888" opacity="0.35"/>
+          <rect x="240" y="180" width="100" height="60" rx="14" fill="#6FA888" opacity="0.3"/>
+          <rect x="260" y="260" width="60" height="120" rx="6" fill="#6FA888" opacity="0.25"/>
+          <line x1="0" y1="400" x2="400" y2="400" stroke="white" stroke-width="1" opacity="0.5"/>
+          <circle cx="320" cy="130" r="22" fill="white" opacity="0.7"/>
+          <line x1="320" y1="108" x2="320" y2="40" stroke="#6FA888" stroke-width="3" opacity="0.4"/>
+        </svg>
+        <span class="hero-image-label">[ 院内の様子 ]</span>
+      </div>
+      <div class="floating-card floating-card-1 reveal delay-3">
+        <div class="floating-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="floating-card-title">診療受付</div>
+          <div class="floating-card-value">9:00 〜 18:00</div>
+        </div>
+      </div>
+      <div class="floating-card floating-card-2 reveal delay-4">
+        <div class="floating-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="floating-card-title">創業以来</div>
+          <div class="floating-card-value">地域に根ざして</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section class="hours-section" id="hours">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Opening Hours</div>
+      <h2 class="section-title">診療時間・休診日</h2>
+      <p class="section-lede">月曜から土曜まで、お仕事帰りやお買い物のついでにもお立ち寄りいただけます。日曜・祝日はお休みです。</p>
+    </div>
+
+    <div class="hours-grid">
+      <div class="hours-table reveal">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th class="sat">土</th>
+              <th class="sun">日・祝</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>午前<br><span style="font-size:10px;font-weight:400;letter-spacing:.08em;">9:00 - 12:30</span></th>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">休診</td>
+            </tr>
+            <tr>
+              <th>午後<br><span style="font-size:10px;font-weight:400;letter-spacing:.08em;">14:30 - 18:00</span></th>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">休診</td>
+              <td class="closed">休診</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hours-notes reveal delay-1">
+        <div class="hours-note">
+          <div class="hours-note-title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            休診日について
+          </div>
+          <p>土曜日の午後、日曜日、祝日は休診となります。<br>急患の方はお電話でご相談ください。</p>
+        </div>
+        <div class="hours-note">
+          <div class="hours-note-title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            初診・再診のご予約
+          </div>
+          <p>当院は予約優先制です。お電話にてご予約をお願いいたします。当日のご予約も可能な範囲で承ります。</p>
+        </div>
+        <div class="hours-note">
+          <div class="hours-note-title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+            駐車場
+          </div>
+          <p>院前に駐車スペースを完備しております。お車でも安心してお越しください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-title">診療内容</h2>
+      <p class="section-lede">小さなお子様からご年配の方まで、地域の皆様のお口の健康を末長くサポートします。基本は保険診療で、必要に応じて自費診療もご案内いたします。</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-num">01</div>
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5.5C9.5 3 6 3 4.5 5.5c-2 3.5 0 8 2 11.5 1 1.5 2 3 3 3 .5 0 1-.5 1-2 0-1.5.5-2 1.5-2s1.5.5 1.5 2c0 1.5.5 2 1 2 1 0 2-1.5 3-3 2-3.5 4-8 2-11.5C18 3 14.5 3 12 5.5z"/>
+          </svg>
+        </div>
+        <h3>一般歯科</h3>
+        <p>むし歯や歯周病の治療を中心に、痛みの少ない丁寧な治療を心がけています。お一人おひとりのお口の状態をしっかりと診させていただいた上で、最適な治療をご提案します。</p>
+        <div class="service-card-tags">
+          <span class="service-tag">保険診療</span>
+          <span class="service-tag">むし歯治療</span>
+          <span class="service-tag">歯周病</span>
+          <span class="service-tag">根管治療</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-1">
+        <div class="service-card-num">02</div>
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>予防歯科・クリーニング</h3>
+        <p>「治す」より「守る」歯科医療を。定期的なクリーニングと検診で、ご自身の歯を長く健康に保つお手伝いをいたします。歯石除去・PMTC・フッ素塗布も対応。</p>
+        <div class="service-card-tags">
+          <span class="service-tag">保険診療</span>
+          <span class="service-tag">定期検診</span>
+          <span class="service-tag">PMTC</span>
+          <span class="service-tag">フッ素塗布</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-2">
+        <div class="service-card-num">03</div>
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </div>
+        <h3>小児歯科</h3>
+        <p>お子様が「歯医者さんは怖くない」と思えるよう、優しくゆっくりと治療を進めます。乳歯のうちからの予防習慣で、生涯虫歯になりにくい口腔環境を育てましょう。</p>
+        <div class="service-card-tags">
+          <span class="service-tag">保険診療</span>
+          <span class="service-tag">乳歯ケア</span>
+          <span class="service-tag">予防</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-3">
+        <div class="service-card-num">04</div>
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>義歯・補綴治療</h3>
+        <p>失った歯を補う入れ歯・被せ物の治療。保険診療の入れ歯から、より快適な自費診療の選択肢まで、ご希望とご予算に合わせてご提案いたします。</p>
+        <div class="service-card-tags">
+          <span class="service-tag">保険診療</span>
+          <span class="service-tag self">自費診療</span>
+          <span class="service-tag">入れ歯</span>
+          <span class="service-tag">クラウン</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOCTOR ============ -->
+<section class="doctor-section" id="doctor">
+  <div class="container">
+    <div class="doctor-grid">
+      <div class="doctor-portrait reveal">
+        <!-- TODO: 院長写真に差し替えてください -->
+        <svg class="hero-image-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="500" fill="#EEF5F0"/>
+          <circle cx="200" cy="200" r="65" fill="#C4DBCB" opacity="0.7"/>
+          <path d="M 90 500 Q 90 330 200 330 Q 310 330 310 500 Z" fill="#6FA888" opacity="0.55"/>
+          <path d="M 170 350 L 200 380 L 230 350" stroke="white" stroke-width="3" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="doctor-portrait-label">[ 院長 写真 ]</span>
+        <div class="doctor-stamp">院長<br>挨拶</div>
+      </div>
+      <div class="doctor-content reveal delay-1">
+        <div class="section-eyebrow">Greeting from the Director</div>
+        <h2 class="section-title">院長のごあいさつ</h2>
+        <div class="doctor-message">
+          <p>はじめまして。井之上歯科の院長、井ノ上 哲也と申します。</p>
+          <p>当院は西伊敷の地で、地域の皆様のお口の健康を見守ってまいりました。「歯医者さんは怖い」「痛そう」というイメージを少しでも和らげられるよう、患者様お一人おひとりに寄り添った診療を心がけています。</p>
+          <p>お子様からご高齢の方まで、ご家族みなさまでお気軽にお越しください。</p>
+        </div>
+        <div class="doctor-name">井ノ上 哲也</div>
+        <div class="doctor-title-jp">院 長 ／ DIRECTOR</div>
+        <ul class="doctor-credentials">
+          <li>歯科医師免許取得</li>
+          <li>日本歯科医師会 会員</li>
+          <li>鹿児島県歯科医師会 会員</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Voices</div>
+      <h2 class="section-title">患者様の声</h2>
+      <p class="section-lede">地域の皆様からいただいた、嬉しいお言葉の数々。これからもご期待に応えられるよう、丁寧な診療を続けてまいります。</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">先生もスタッフの方も、とても丁寧で優しく対応してくださいました。治療の説明もわかりやすく、安心して任せられます。長くお世話になっています。</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-meta-name">M.K. 様</div>
+            <div class="review-meta-info">50代 ／ 西伊敷在住</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal delay-1">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">子どもがはじめての歯医者さんでしたが、優しく接してくださって泣かずに終わりました。家族みんなでお世話になっています。先生のお人柄が素敵です。</p>
+        <div class="review-author">
+          <div class="review-avatar">Y</div>
+          <div>
+            <div class="review-meta-name">Y.S. 様</div>
+            <div class="review-meta-info">30代 ／ ご家族で来院</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal delay-2">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">クリーニングで定期的に通っています。痛みなく丁寧にしていただけるので、行くのが苦になりません。地元にこういう歯医者さんがあるのはありがたい限りです。</p>
+        <div class="review-author">
+          <div class="review-avatar">T</div>
+          <div>
+            <div class="review-meta-name">T.H. 様</div>
+            <div class="review-meta-info">40代 ／ 定期検診</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-source reveal">
+      <span>※ 患者様からいただいたお声を、許可を得て掲載しています</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESS ============ -->
+<section id="access">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Access</div>
+      <h2 class="section-title">アクセス・地図</h2>
+      <p class="section-lede">鹿児島市西伊敷の閑静な地域にございます。お車でも徒歩でも、お気軽にお越しください。</p>
+    </div>
+
+    <div class="access-grid">
+      <div class="access-info reveal">
+        <div class="access-row">
+          <div class="access-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="access-label">ADDRESS</div>
+            <div class="access-value">〒890-0002<br>鹿児島県鹿児島市西伊敷3丁目13-4</div>
+          </div>
+        </div>
+        <div class="access-row">
+          <div class="access-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="access-label">TEL</div>
+            <div class="access-value"><a href="tel:0992285755">099-228-5755</a></div>
+          </div>
+        </div>
+        <div class="access-row">
+          <div class="access-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="access-label">PARKING</div>
+            <div class="access-value">院前駐車場あり</div>
+          </div>
+        </div>
+        <div class="access-row" style="border-bottom:none;">
+          <div class="access-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <div class="access-label">HOURS</div>
+            <div class="access-value">月〜金 9:00-12:30 / 14:30-18:00<br>土曜 9:00-12:30（午後休診）<br>日・祝休診</div>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%E8%A5%BF%E4%BC%8A%E6%95%B73%E4%B8%81%E7%9B%AE13-4" target="_blank" rel="noopener" class="btn btn-ghost" style="align-self:flex-start;">
+          Google Mapsで開く
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H8M17 7V16"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="access-map reveal delay-1">
+        <iframe
+          src="https://maps.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%E8%A5%BF%E4%BC%8A%E6%95%B73%E4%B8%81%E7%9B%AE13-4&t=m&z=16&output=embed&iwloc=near"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="井之上歯科 地図"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-inner reveal">
+      <div class="section-eyebrow">Booking</div>
+      <h2 class="section-title">ご予約はお電話で</h2>
+      <p class="section-lede">当院は予約優先制となっております。<br>まずはお気軽にお電話にてお問い合わせください。</p>
+
+      <a href="tel:0992285755" class="booking-tel">
+        <span class="booking-tel-label">TEL ／ お電話</span>
+        <span class="booking-tel-number">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          099-228-5755
+        </span>
+        <span class="booking-tel-hours">平日 9:00 - 18:00 ／ 土曜 9:00 - 12:30</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">井之上歯科</div>
+      <p class="footer-text">
+        〒890-0002<br>
+        鹿児島県鹿児島市西伊敷3丁目13-4<br>
+        TEL：099-228-5755
+      </p>
+    </div>
+    <div>
+      <div class="footer-h">CLINIC</div>
+      <ul class="footer-list">
+        <li><a href="#hours">診療時間</a></li>
+        <li><a href="#services">診療内容</a></li>
+        <li><a href="#doctor">院長紹介</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">CONTACT</div>
+      <ul class="footer-list">
+        <li><a href="#reviews">患者様の声</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="tel:0992285755">電話で予約する</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 井之上歯科 / Inoueshika Dental Clinic. All rights reserved.</div>
+</footer>
+
+<script>
+const header = document.getElementById('siteHeader');
+const progress = document.getElementById('scrollProgress');
+const blob1 = document.getElementById('blob1');
+const blob2 = document.getElementById('blob2');
+const heroImage = document.getElementById('heroImage');
+
+function onScroll() {
+  const y = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = Math.min(100, Math.max(0, (y / docH) * 100)) + '%';
+  if (y > 30) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+  if (y < window.innerHeight * 1.2) {
+    if (blob1) blob1.style.transform = `translate3d(${y * 0.06}px, ${y * 0.18}px, 0)`;
+    if (blob2) blob2.style.transform = `translate3d(${-y * 0.05}px, ${-y * 0.12}px, 0)`;
+    if (heroImage) heroImage.style.transform = `translate3d(0, ${y * 0.08}px, 0)`;
+  }
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+document.documentElement.classList.add('js-reveal-ready');
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+
+const revealEls = document.querySelectorAll('.reveal');
+function revealInView() {
+  const vh = window.innerHeight;
+  revealEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < vh - 10 && r.bottom > 0) {
+      el.classList.add('visible');
+      io.unobserve(el);
+    }
+  });
+}
+revealEls.forEach(el => io.observe(el));
+requestAnimationFrame(revealInView);
+window.addEventListener('load', revealInView);
+setTimeout(revealInView, 300);
+</script>
+
+</body>
+</html>
